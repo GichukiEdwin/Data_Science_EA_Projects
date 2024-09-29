@@ -19,8 +19,8 @@
 
 #### Solution
 
-    + This Sequel query demonstrates how to create the given table while maintaining the integrity of the data and following the correct naming rules and conventions.
-    + In this project, the SQL statements are specific to PostgreSQL which is my DBMS of choice.
++ This Sequel query demonstrates how to create the given table while maintaining the integrity of the data and following the correct naming rules and conventions.
++ In this project, the SQL statements are specific to PostgreSQL which is my DBMS of choice.
 
 #### Create sales table
 
@@ -34,15 +34,13 @@
     )
     ```
 
-#### Breakdown
++ This table design follows the given rules as
+    - Uses the **CREATE TABLE** to create a table with the name **sales**
+    - Indicates the column names the table contains with their correct data types and necessary constraints to define the kind of data each column should accept.
+    - Note that for the first three columns for the ID's I use the bigserial integer type that is auto-incrementing.
 
-    + This table design follows the given rules as
-        - Uses the **CREATE TABLE** to create a table with the name **sales**
-        - Indicates the column names the table contains with their correct data types and necessary constraints to define the kind of data each column should accept.
-        - Note that for the first three columns for the ID's I use the bigserial integer type that is auto-incrementing.
-
-    + The next step I presume would be to import the data from your source and populate the table to work with in the database.
-    + The following would be the Import statement(I assume the data exists in a CSV file)
++ The next step I presume would be to import the data from your source and populate the table to work with in the database.
++ The following would be the Import statement(I assume the data exists in a CSV file)
 
 #### Import table
 
@@ -52,11 +50,9 @@
     WITH (FORMAT CSV, HEADER);
     ```
 
-#### Breakdown
-
-    + The **COPY** statement indicates that we to import the data into the sales table
-    + The **FROM** statement indicates the exact location address of your CSV file in your local machine(in this case we assume we are working in a Windows machine)
-    + The **WITH** keyword specifies the nature of the file, in this case it is a CSV file and also uses the **HEADER** keyword to speccify that we should exclude the files header rows
++ The **COPY** statement indicates that we to import the data into the sales table
++ The **FROM** statement indicates the exact location address of your CSV file in your local machine(in this case we assume we are working in a Windows machine)
++ The **WITH** keyword specifies the nature of the file, in this case it is a CSV file and also uses the **HEADER** keyword to speccify that we should exclude the files header rows
 
 ##### So far with the **CREATE TABLE** and **COPY** scripts, we have a working table with all the columns and rows we need to get our hands dirty on
 
